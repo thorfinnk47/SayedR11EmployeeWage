@@ -46,6 +46,7 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mnuSettings = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnDisplayLog = new System.Windows.Forms.Button();
             this.grpPayClassification.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -94,7 +95,7 @@
             this.label3.Size = new System.Drawing.Size(205, 37);
             this.label3.TabIndex = 5;
             this.label3.Text = "Hourly Rate:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            //this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // txtHourlyRate
             // 
@@ -112,7 +113,7 @@
             this.lstOutput.Location = new System.Drawing.Point(311, 341);
             this.lstOutput.Margin = new System.Windows.Forms.Padding(6);
             this.lstOutput.Name = "lstOutput";
-            this.lstOutput.Size = new System.Drawing.Size(1282, 345);
+            this.lstOutput.Size = new System.Drawing.Size(1556, 345);
             this.lstOutput.TabIndex = 7;
             this.lstOutput.TabStop = false;
             // 
@@ -131,7 +132,7 @@
             // btnClear
             // 
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(837, 777);
+            this.btnClear.Location = new System.Drawing.Point(750, 774);
             this.btnClear.Margin = new System.Windows.Forms.Padding(6);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(260, 142);
@@ -143,10 +144,10 @@
             // btnQuit
             // 
             this.btnQuit.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuit.Location = new System.Drawing.Point(1343, 762);
+            this.btnQuit.Location = new System.Drawing.Point(1248, 771);
             this.btnQuit.Margin = new System.Windows.Forms.Padding(6);
             this.btnQuit.Name = "btnQuit";
-            this.btnQuit.Size = new System.Drawing.Size(250, 154);
+            this.btnQuit.Size = new System.Drawing.Size(250, 148);
             this.btnQuit.TabIndex = 10;
             this.btnQuit.Text = "&Quit";
             this.btnQuit.UseVisualStyleBackColor = true;
@@ -168,7 +169,7 @@
             this.txtHoursWorked.Name = "txtHoursWorked";
             this.txtHoursWorked.Size = new System.Drawing.Size(378, 31);
             this.txtHoursWorked.TabIndex = 4;
-            this.txtHoursWorked.TextChanged += new System.EventHandler(this.txtHoursWorked_TextChanged);
+            //this.txtHoursWorked.TextChanged += new System.EventHandler(this.txtHoursWorked_TextChanged);
             // 
             // grpPayClassification
             // 
@@ -182,7 +183,6 @@
             this.grpPayClassification.TabIndex = 0;
             this.grpPayClassification.TabStop = false;
             this.grpPayClassification.Text = "Pay Classification";
-            this.grpPayClassification.Enter += new System.EventHandler(this.grpPayClassification_Enter);
             // 
             // rdoSalaried
             // 
@@ -194,7 +194,6 @@
             this.rdoSalaried.TabStop = true;
             this.rdoSalaried.Text = "Salaried";
             this.rdoSalaried.UseVisualStyleBackColor = true;
-            this.rdoSalaried.CheckedChanged += new System.EventHandler(this.rdoSalaried_CheckedChanged);
             // 
             // rdoHourly
             // 
@@ -206,7 +205,6 @@
             this.rdoHourly.TabStop = true;
             this.rdoHourly.Text = "Hourly";
             this.rdoHourly.UseVisualStyleBackColor = true;
-            this.rdoHourly.CheckedChanged += new System.EventHandler(this.rdoHourly_CheckedChanged);
             // 
             // rdoContractor
             // 
@@ -218,7 +216,7 @@
             this.rdoContractor.TabStop = true;
             this.rdoContractor.Text = "Contractor";
             this.rdoContractor.UseVisualStyleBackColor = true;
-            this.rdoContractor.CheckedChanged += new System.EventHandler(this.rdoContractor_CheckedChanged);
+            //this.rdoContractor.CheckedChanged += new System.EventHandler(this.rdoContractor_CheckedChanged);
             // 
             // openFileDialog1
             // 
@@ -232,22 +230,31 @@
             this.mnuSettings});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(2740, 48);
+            this.menuStrip1.Size = new System.Drawing.Size(2740, 40);
             this.menuStrip1.TabIndex = 11;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // mnuSettings
             // 
             this.mnuSettings.Name = "mnuSettings";
-            this.mnuSettings.Size = new System.Drawing.Size(120, 44);
+            this.mnuSettings.Size = new System.Drawing.Size(120, 36);
             this.mnuSettings.Text = "&Settings";
-            this.mnuSettings.Click += new System.EventHandler(this.mnuSettings_Click);
+            // 
+            // btnDisplayLog
+            // 
+            this.btnDisplayLog.Location = new System.Drawing.Point(1630, 771);
+            this.btnDisplayLog.Name = "btnDisplayLog";
+            this.btnDisplayLog.Size = new System.Drawing.Size(237, 148);
+            this.btnDisplayLog.TabIndex = 12;
+            this.btnDisplayLog.Text = "Display Log Based on Overtime Rates";
+            this.btnDisplayLog.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2740, 1654);
+            this.Controls.Add(this.btnDisplayLog);
             this.Controls.Add(this.grpPayClassification);
             this.Controls.Add(this.txtHoursWorked);
             this.Controls.Add(this.label4);
@@ -265,7 +272,7 @@
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Form1";
             this.Text = "Paystub";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            //this.Load += new System.EventHandler(this.Form1_Load);
             this.grpPayClassification.ResumeLayout(false);
             this.grpPayClassification.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
@@ -295,6 +302,7 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem mnuSettings;
+        private System.Windows.Forms.Button btnDisplayLog;
     }
 }
 
