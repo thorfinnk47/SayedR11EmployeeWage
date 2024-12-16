@@ -13,16 +13,29 @@ namespace SayedR11EmployeeWage
 {
     public partial class Form1 : Form
     {
-        private string PayType;
+        private string PayType = "";
         const string CONTRACTOR = "Contractor";
         const string HOURLY = "Hourly";
         const string SALARIED = "Salaried";
+
+        
+        private double Contractor;
+        private double Hourly;
+        private double Salaried;
+
+        public double ContractorRate { get; set; }
+        public double HourlyRate { get; set; }
+        public double SalariedRate { get; set; }
+
+        
+
+
 
         //declared the form2 object
         private Form2 settingForm;
 
         private string OvertimeLog = "OvertimeLog.txt";
-        private string OvertimeRates = "OvertimeRates.txt";
+        private string OvertimeConfig = "OvertimeConfig.txt";
         public Form1()
         {
             InitializeComponent();
@@ -80,12 +93,15 @@ namespace SayedR11EmployeeWage
                 {
                     case CONTRACTOR:
                         PayTypeRate = 1;
+                        PayTypeRate = Contractor;
                         break;
                     case HOURLY:
                         PayTypeRate = 1.5;
+                        PayTypeRate = Hourly;
                         break;
                     case SALARIED:
                         PayTypeRate = 0;
+                        PayTypeRate = Salaried;
                         break;
                     default:
                         lstOutput.Items.Add(" this shouldn't happen");
@@ -176,67 +192,170 @@ namespace SayedR11EmployeeWage
             txtEmployeeName.BackColor = SystemColors.Window;
         }
 
-    
+        private void rdoContractor_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdoContractor.Checked)
+            {
+                PayType = CONTRACTOR;
+            }
+        }
 
-        
+        private void rdoHourly_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdoHourly.Checked)
+            {
+                PayType = HOURLY;
+            }
+        }
 
-        
+        private void rdoSalaried_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdoSalaried.Checked)
+            {
 
+                PayType = SALARIED;
+            }
+        }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            //ICA 8
+            // here we are actualy creating the form2 object
+            settingForm = new Form2(this);
 
+            // this makes the checked changed procedure run ( it doesn't run if set in designer)
+            rdoContractor.Checked = true;
+            StreamReader reader;
+            bool valValid;
+            bool fileBad = true;
+            do
+            {
+                try
+                {
+                    reader = File.OpenText(OvertimeConfig);
+                    fileBad = false;
+                    double tempValue;
+                    //skipping validity checks so as not to confuse the input
+                    valValid = double.TryParse(reader.ReadLine(), out tempValue);
+                    // optional error checking could be done here
+                    Contractor = tempValue;
 
+                    valValid = double.TryParse(reader.ReadLine(), out tempValue);
+                    Hourly = tempValue;
 
-
-//private void rdoContractor_CheckedChanged(object sender, EventArgs e)
-//{
-
-//    if (rdoContractor.Checked)
-//    {
-//        PayType = CONTRACTOR;
-//    }
-
-//}
-
-//private void rdoHourly_CheckedChanged(object sender, EventArgs e)
-//{
-//    if (rdoHourly.Checked)
-//    {
-//        PayType = HOURLY;
-//    }
-//}
-
-//private void rdoSalaried_CheckedChanged(object sender, EventArgs e)
-//{
-//    if (rdoSalaried.Checked)
-//    {
-//        PayType = SALARIED;
-//    }
-
-
-
-
-//private void mnuSettings_Click(object sender, EventArgs e)
-//{
-//settingForm.txtContractor.Text = CONTRACTOR.ToString();
-//settingForm.txtHourly.Text = HOURLY.ToString();
-//settingForm.txtSalaried.Text = SALARIED.ToString();
-//settingForm.ShowDialog();
-//}
-
-
-
+                    valValid = double.TryParse(reader.ReadLine(), out tempValue);
+                    Salaried = tempValue;
 
 
 
 
 
+                    reader.Close();
+                }
+                catch (FileNotFoundException ex)
+                {
+                    MessageBox.Show("The configuration file was not found. Please select a different file \n Error message was: " +
+                        ex.Message
+                        );
+                    openFileDialog1.InitialDirectory = Application.StartupPath;
+                    openFileDialog1.ShowDialog();
+                    //this takes the file the user slected and puts in the variable for the file we need
+                    OvertimeConfig = openFileDialog1.FileName;
 
 
-//      public void setvaluesonsecondform()
-//      { 
-//         settingform.txtcontractor.text = contractor.tostring();
-//         settingform.txthourly.text = hourly.tostring();
-//         settingform.txtsalaried.text = salaried.tostring();
-//      }
-//    }
-//}
+                }
+            } while (fileBad);
+
+
+        }
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            setValuesOnSecondForm();
+            settingForm.ShowDialog();
+        }
+        public void setValuesOnSecondForm()
+        {
+            
+            settingForm.Text = Contractor.ToString();
+            settingForm.Text = Hourly.ToString();
+            settingForm.Text = Salaried.ToString();
+            
+        }
+
+        private void btnDisplayLog_Click(object sender, EventArgs e)
+        {
+
+            const int MAX_LOG_SIZE = 2000;
+            string[] OvertimeLogLines = new string[MAX_LOG_SIZE];
+            int numLogLines = 0;
+            StreamReader sr;
+            sr = File.OpenText(OvertimeLog);
+            while (!sr.EndOfStream)
+            {
+                OvertimeLogLines[numLogLines] = sr.ReadLine();
+                numLogLines++;
+            }
+            sr.Close();
+            // keep track of begining & end of transaction relative to where
+            // seat type is recorded (For most students this will be the variable
+            // that references their radio button)
+            int begTrans = -2;
+            int endTrans = 6;
+
+            for (int i = 0; i < numLogLines; i++)
+            {
+                if (OvertimeLogLines[i] == "Pay type is " + PayType)
+                {
+                    // Some of you could use  AirlineLogLines[i].Contains(SeatType)
+
+                    for (int j = i + begTrans; j <= i + endTrans; j++)
+                    {
+                        lstOutput.Items.Add(OvertimeLogLines[j]);
+
+                    }
+
+
+                }
+            }
+        }
+
+        private void mnuSettings_Click(object sender, EventArgs e)
+        {
+            
+
+           
+            
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

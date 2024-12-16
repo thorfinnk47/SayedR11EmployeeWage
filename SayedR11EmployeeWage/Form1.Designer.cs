@@ -95,7 +95,6 @@
             this.label3.Size = new System.Drawing.Size(205, 37);
             this.label3.TabIndex = 5;
             this.label3.Text = "Hourly Rate:";
-            //this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // txtHourlyRate
             // 
@@ -169,7 +168,6 @@
             this.txtHoursWorked.Name = "txtHoursWorked";
             this.txtHoursWorked.Size = new System.Drawing.Size(378, 31);
             this.txtHoursWorked.TabIndex = 4;
-            //this.txtHoursWorked.TextChanged += new System.EventHandler(this.txtHoursWorked_TextChanged);
             // 
             // grpPayClassification
             // 
@@ -194,6 +192,7 @@
             this.rdoSalaried.TabStop = true;
             this.rdoSalaried.Text = "Salaried";
             this.rdoSalaried.UseVisualStyleBackColor = true;
+            this.rdoSalaried.CheckedChanged += new System.EventHandler(this.rdoSalaried_CheckedChanged);
             // 
             // rdoHourly
             // 
@@ -205,6 +204,7 @@
             this.rdoHourly.TabStop = true;
             this.rdoHourly.Text = "Hourly";
             this.rdoHourly.UseVisualStyleBackColor = true;
+            this.rdoHourly.CheckedChanged += new System.EventHandler(this.rdoHourly_CheckedChanged);
             // 
             // rdoContractor
             // 
@@ -216,7 +216,7 @@
             this.rdoContractor.TabStop = true;
             this.rdoContractor.Text = "Contractor";
             this.rdoContractor.UseVisualStyleBackColor = true;
-            //this.rdoContractor.CheckedChanged += new System.EventHandler(this.rdoContractor_CheckedChanged);
+            this.rdoContractor.CheckedChanged += new System.EventHandler(this.rdoContractor_CheckedChanged);
             // 
             // openFileDialog1
             // 
@@ -230,15 +230,16 @@
             this.mnuSettings});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(2740, 40);
+            this.menuStrip1.Size = new System.Drawing.Size(2740, 42);
             this.menuStrip1.TabIndex = 11;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // mnuSettings
             // 
             this.mnuSettings.Name = "mnuSettings";
-            this.mnuSettings.Size = new System.Drawing.Size(120, 36);
+            this.mnuSettings.Size = new System.Drawing.Size(120, 38);
             this.mnuSettings.Text = "&Settings";
+            this.mnuSettings.Click += new System.EventHandler(this.mnuSettings_Click);
             // 
             // btnDisplayLog
             // 
@@ -248,6 +249,7 @@
             this.btnDisplayLog.TabIndex = 12;
             this.btnDisplayLog.Text = "Display Log Based on Overtime Rates";
             this.btnDisplayLog.UseVisualStyleBackColor = true;
+            this.btnDisplayLog.Click += new System.EventHandler(this.btnDisplayLog_Click);
             // 
             // Form1
             // 
@@ -272,7 +274,7 @@
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Form1";
             this.Text = "Paystub";
-            //this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.grpPayClassification.ResumeLayout(false);
             this.grpPayClassification.PerformLayout();
             this.menuStrip1.ResumeLayout(false);

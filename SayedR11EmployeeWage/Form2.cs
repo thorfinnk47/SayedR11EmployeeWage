@@ -32,9 +32,11 @@ namespace SayedR11EmployeeWage
         {
             //read values from text boxes
             bool contractorValid, hourlyValid, salariedValid;
-            double cTempValue, hTempValue, sTempValue;
+            double otrTempValue, cTempValue, hTempValue, sTempValue;
+            
             StreamWriter sw;
 
+           
             contractorValid = double.TryParse(txtContractor.Text, out cTempValue);
             hourlyValid = double.TryParse(txtHourly.Text, out hTempValue);
             salariedValid = double.TryParse(txtSalaried.Text, out sTempValue);
@@ -47,7 +49,7 @@ namespace SayedR11EmployeeWage
                 //ff.Contractor = cTempValue;
                 //ff.Hourly = hTempValue;
                 //ff.Salaried = sTempValue;
-                //sw= File.CreateText(ff....Config)
+                //sw = File.CreateText(ff....Config)
                 //sw.Close();
                 //sw.WriteLine(ff.Contractor)
                 //sw.WriteLine(ff.Hourly)
@@ -61,7 +63,7 @@ namespace SayedR11EmployeeWage
                 //if values not good 
                 //replace all text box values with current values
 
-                //ff.setValuesOnSecondForm();
+                ff.setValuesOnSecondForm();
 
 
                 //is there another way to do this?

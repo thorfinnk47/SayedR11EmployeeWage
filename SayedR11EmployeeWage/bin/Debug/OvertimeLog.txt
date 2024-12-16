@@ -1,0 +1,72 @@
+************** Beginning of Transaction at 12/11/2024 11:25:45 AM **********
+Employee Name is sdadh
+Pay Classification is Contractor
+Overtime Rate is $1.00
+Overtime Pay is$600.00
+Hourly Rate is $10.00
+Hours Worked is 100.00
+Total Wages are $1,000.00
+*********** Beginning of Transaction at 12/11/2024 11:25:54 AM **********
+Employee Name is sdfsdf
+Pay Classification is Contractor
+Overtime Rate is $1.00
+Overtime Pay is$1,200.00
+Hourly Rate is $20.00
+Hours Worked is 100.00
+Total Wages are $2,000.00
+*********** Beginning of Transaction at 12/11/2024 2:11:02 PM **********
+Employee Name is Sayed
+Pay Classification is 
+Overtime Rate is $0.00
+Overtime Pay is$0.00
+Hourly Rate is $10.00
+Hours Worked is 100.00
+Total Wages are $400.00
+*********** Beginning of Transaction at 12/11/2024 2:19:04 PM **********
+Employee Name is s
+Pay Classification is Contractor
+Overtime Rate is $1.00
+Overtime Pay is$50.00
+Hourly Rate is $10.00
+Hours Worked is 45.00
+Total Wages are $450.00
+*********** Beginning of Transaction at 12/11/2024 2:22:14 PM **********
+Employee Name is s
+Pay Classification is Hourly
+Overtime Rate is $1.50
+Overtime Pay is$750.00
+Hourly Rate is $100.00
+Hours Worked is 45.00
+Total Wages are $4,750.00
+*********** Beginning of Transaction at 12/11/2024 2:42:20 PM **********
+Employee Name is sayed
+Pay Classification is Hourly
+Overtime Rate is $1.50
+Overtime Pay is$150.00
+Hourly Rate is $10.00
+Hours Worked is 50.00
+Total Wages are $550.00
+*********** Beginning of Transaction at 12/16/2024 10:40:08 AM **********
+Employee Name is Sayed
+Pay Classification is Hourly
+Overtime Rate is $1.50
+Overtime Pay is$1,200.00
+Hourly Rate is $10.00
+Hours Worked is 120.00
+Total Wages are $1,600.00
+*********** Beginning of Transaction at 12/16/2024 10:41:46 AM **********
+Employee Name is Sayed
+Pay Classification is Salaried
+Overtime Rate is $0.00
+Overtime Pay is$0.00
+Hourly Rate is $10.00
+Hours Worked is 120.00
+Total Wages are $400.00
+*********** Beginning of Transaction at 12/16/2024 10:41:53 AM **********
+Employee Name is Sayed
+Pay Classification is Contractor
+Overtime Rate is $1.00
+Overtime Pay is$800.00
+Hourly Rate is $10.00
+Hours Worked is 120.00
+Total Wages are $1,200.00

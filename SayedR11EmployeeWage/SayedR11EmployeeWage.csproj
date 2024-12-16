@@ -91,7 +91,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Debug\OvertimeLog.txt" />
-    <Content Include="bin\Debug\OvertimeRates.txt" />
+    <Content Include="bin\Debug\OvertimeConfig.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
