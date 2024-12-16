@@ -46,14 +46,14 @@ namespace SayedR11EmployeeWage
 
                 //if values good
                 //set properties
-                //ff.Contractor = cTempValue;
-                //ff.Hourly = hTempValue;
-                //ff.Salaried = sTempValue;
-                //sw = File.CreateText(ff....Config)
-                //sw.Close();
-                //sw.WriteLine(ff.Contractor)
-                //sw.WriteLine(ff.Hourly)
-                //sw.WriteLine(ff.Salaried)
+                ff.ContractorRate = cTempValue;
+                ff.HourlyRate = hTempValue;
+                ff.SalariedRate = sTempValue;
+                sw = File.CreateText(ff.OvertimeConfig);
+                sw.Close();
+                sw.WriteLine(ff.ContractorRate);
+                sw.WriteLine(ff.HourlyRate);
+                sw.WriteLine(ff.SalariedRate);
 
                 //save values in file
 

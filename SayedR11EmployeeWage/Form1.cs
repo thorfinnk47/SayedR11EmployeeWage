@@ -35,7 +35,7 @@ namespace SayedR11EmployeeWage
         private Form2 settingForm;
 
         private string OvertimeLog = "OvertimeLog.txt";
-        private string OvertimeConfig = "OvertimeConfig.txt";
+        public string OvertimeConfig = "OvertimeConfig.txt";
         public Form1()
         {
             InitializeComponent();
@@ -286,8 +286,8 @@ namespace SayedR11EmployeeWage
         private void btnDisplayLog_Click(object sender, EventArgs e)
         {
 
-            const int MAX_LOG_SIZE = 2000;
-            string[] OvertimeLogLines = new string[MAX_LOG_SIZE];
+            const int MAX_LOG_SIZE = 3000;
+            String[] OvertimeLogLines = new string[MAX_LOG_SIZE];
             int numLogLines = 0;
             StreamReader sr;
             sr = File.OpenText(OvertimeLog);
@@ -301,11 +301,11 @@ namespace SayedR11EmployeeWage
             // seat type is recorded (For most students this will be the variable
             // that references their radio button)
             int begTrans = -2;
-            int endTrans = 6;
+            int endTrans = 5;
 
             for (int i = 0; i < numLogLines; i++)
             {
-                if (OvertimeLogLines[i] == "Pay type is " + PayType)
+                if (OvertimeLogLines[i] == "Pay Classification is " + PayType)
                 {
                     // Some of you could use  AirlineLogLines[i].Contains(SeatType)
 
@@ -322,8 +322,9 @@ namespace SayedR11EmployeeWage
 
         private void mnuSettings_Click(object sender, EventArgs e)
         {
-            
 
+            setValuesOnSecondForm();
+            settingForm.ShowDialog();
            
             
 

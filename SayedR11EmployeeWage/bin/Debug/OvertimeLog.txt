@@ -70,3 +70,51 @@ Overtime Pay is$800.00
 Hourly Rate is $10.00
 Hours Worked is 120.00
 Total Wages are $1,200.00
+*********** Beginning of Transaction at 12/16/2024 12:24:49 PM **********
+Employee Name is asdas
+Pay Classification is Contractor
+Overtime Rate is $1.00
+Overtime Pay is$800.00
+Hourly Rate is $10.00
+Hours Worked is 120.00
+Total Wages are $1,200.00
+*********** Beginning of Transaction at 12/16/2024 12:24:52 PM **********
+Employee Name is asdas
+Pay Classification is Contractor
+Overtime Rate is $1.00
+Overtime Pay is$800.00
+Hourly Rate is $10.00
+Hours Worked is 120.00
+Total Wages are $1,200.00
+*********** Beginning of Transaction at 12/16/2024 12:24:53 PM **********
+Employee Name is asdas
+Pay Classification is Contractor
+Overtime Rate is $1.00
+Overtime Pay is$800.00
+Hourly Rate is $10.00
+Hours Worked is 120.00
+Total Wages are $1,200.00
+*********** Beginning of Transaction at 12/16/2024 12:27:17 PM **********
+Employee Name is Sayed
+Pay Classification is Contractor
+Overtime Rate is $1.00
+Overtime Pay is$600.00
+Hourly Rate is $10.00
+Hours Worked is 100.00
+Total Wages are $1,000.00
+*********** Beginning of Transaction at 12/16/2024 12:27:18 PM **********
+Employee Name is Sayed
+Pay Classification is Contractor
+Overtime Rate is $1.00
+Overtime Pay is$600.00
+Hourly Rate is $10.00
+Hours Worked is 100.00
+Total Wages are $1,000.00
+*********** Beginning of Transaction at 12/16/2024 12:27:19 PM **********
+Employee Name is Sayed
+Pay Classification is Contractor
+Overtime Rate is $1.00
+Overtime Pay is$600.00
+Hourly Rate is $10.00
+Hours Worked is 100.00
+Total Wages are $1,000.00
